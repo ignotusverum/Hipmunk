@@ -32,6 +32,8 @@ class HotelsSearchViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         
+        collectionView.backgroundColor = UIColor.white
+        
         return collectionView
     }()
     
