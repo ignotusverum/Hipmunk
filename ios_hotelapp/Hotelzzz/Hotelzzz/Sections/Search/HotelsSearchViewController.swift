@@ -8,19 +8,34 @@
 
 import UIKit
 import SnapKit
+import GooglePlaces
 
 class HotelsSearchViewController: UIViewController {
 
+    /// Places
+    var placesClient: GMSPlacesClient
+    
     /// Location search view
     lazy var placeSearchView: PlaceSearchView = {
        
-        let placeSearchView = PlaceSearchView(state: .inputDisabled)
-        return placeSearchView
+        let view = PlaceSearchView(state: .inputDisabled)
+        return view
     }()
     
     /// Status bar color
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    // MARK: - Initialization
+    init() {
+        
+        placesClient = GMSPlacesClient.shared()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Controller Lifecycle
@@ -29,8 +44,17 @@ class HotelsSearchViewController: UIViewController {
 
         /// Setup UI
         setupUI()
+        
+        /// Handle transition
+        placeSearchView.viewTapped({
+
+            /// Presend places controller
+            let placesVC = LocationSearchViewController()
+            self.pushVC(placesVC)
+        })
     }
     
+    // MARK: - UI Setup
     private func setupUI() {
         
         /// Background color
@@ -56,5 +80,22 @@ class HotelsSearchViewController: UIViewController {
         }
         
         super.updateViewConstraints()
+    }
+    
+    // MARK: - Google places - handle current place
+    func handleCurrentPlace() {
+        
+        /// Try to fetch current place
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            
+            /// Safety check
+            guard let place = placeLikelihoodList?.likelihoods.first?.place else {
+                print("Pick Place error: \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            /// Set place name
+            self.placeSearchView.textInput.text = place.name
+        })
     }
 }

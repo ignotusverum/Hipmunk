@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        /// Places
+        GMSPlacesClient.provideAPIKey("AIzaSyCfS9kYz0mAyr7K7tiBu7YWvJUZjotXjLk")
         
         /// Window setup
         AppDelegate.appDelegate.window = UIWindow(frame: UIScreen.main.bounds)

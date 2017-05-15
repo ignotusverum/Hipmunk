@@ -99,6 +99,7 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
         
         /// Text input
         textInput.attributedText = generatePlaceholder()
+        textInput.isUserInteractionEnabled = state == .inputEnabled
         
         /// Icon image
         imageView.image = generateIcon()

@@ -13,10 +13,9 @@ pod 'EZSwiftExtensions'
 pod 'CoreStore'
 
 # Google places
+pod 'GoogleMaps'
+pod 'GooglePlaces'
 pod 'GooglePlacePicker'
-
-# Transition Animation
-pod 'Hero'
 
 # Auto layout
 pod 'SnapKit', '~> 3.2.0'

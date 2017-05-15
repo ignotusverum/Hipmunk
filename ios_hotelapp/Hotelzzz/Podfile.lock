@@ -1,7 +1,16 @@
 PODS:
   - CoreStore (3.1.1)
   - EZSwiftExtensions (1.9)
-  - Hero (0.3.6)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.2.0):
+    - GoogleMaps (= 2.2.0)
+    - GooglePlaces (= 2.2.0)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - PromiseKit (4.2.0):
     - PromiseKit/Foundation (= 4.2.0)
     - PromiseKit/QuartzCore (= 4.2.0)
@@ -19,7 +28,9 @@ PODS:
 DEPENDENCIES:
   - CoreStore
   - EZSwiftExtensions
-  - Hero
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - PromiseKit (~> 4.0)
   - SnapKit (~> 3.2.0)
   - SVProgressHUD
@@ -27,11 +38,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   CoreStore: dce7dc7eb6c379368118d7f2421c01a1b21a3c03
   EZSwiftExtensions: ce22bf6fc5c6e7c883fec413300b006e123735d0
-  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: cebd3e586d17d81b21f935e98332db6a7beed4d4
+PODFILE CHECKSUM: 89dc8c358a41751db5b765dd16f370796bb49ad2
 
 COCOAPODS: 1.1.1

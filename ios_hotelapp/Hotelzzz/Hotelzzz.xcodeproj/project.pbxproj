@@ -25,6 +25,7 @@
 		F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */; };
 		F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */; };
 		F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BF1EC9F88900E7D8FF /* Colors.swift */; };
+		F58184C21ECA170C00E7D8FF /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSearchView.swift; sourceTree = "<group>"; };
 		F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewProtocol.swift; sourceTree = "<group>"; };
 		F58184BF1EC9F88900E7D8FF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F58184A11EC94D6F00E7D8FF /* HotelsSearchViewController.swift */,
+				F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
 				F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */,
 				F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */,
+				F58184C21ECA170C00E7D8FF /* LocationSearchViewController.swift in Sources */,
 				F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */,
 				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
 				F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */,
