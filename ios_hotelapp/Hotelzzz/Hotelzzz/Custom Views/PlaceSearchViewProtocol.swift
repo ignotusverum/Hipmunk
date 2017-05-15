@@ -31,7 +31,7 @@ extension PlaceSearchViewProtocol {
         let placeholder = "Search"
         
         /// Placeholder Params
-        let params: [String: Any] = [NSForegroundColorAttributeName: UIColor.defaultColor, NSFontAttributeName: UIFont.AvenirNextRegular(size: 12)]
+        let params: [String: Any] = [NSForegroundColorAttributeName: UIColor.defaultColor, NSFontAttributeName: UIFont.AvenirNextRegular(size: 14)]
         
         return NSAttributedString(string: placeholder, attributes: params)
     }

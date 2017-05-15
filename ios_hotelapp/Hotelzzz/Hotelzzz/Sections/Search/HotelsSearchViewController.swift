@@ -11,6 +11,13 @@ import SnapKit
 
 class HotelsSearchViewController: UIViewController {
 
+    /// Location search view
+    lazy var placeSearchView: PlaceSearchView = {
+       
+        let placeSearchView = PlaceSearchView(state: .inputDisabled)
+        return placeSearchView
+    }()
+    
     /// Status bar color
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -31,5 +38,23 @@ class HotelsSearchViewController: UIViewController {
         
         /// Title
         setTitle("Search Hotels")
+        
+        /// Place search view
+        view.addSubview(placeSearchView)
+        
+        /// Setup constraints
+        updateViewConstraints()
+    }
+    
+    override func updateViewConstraints() {
+        
+        /// Place search setup
+        placeSearchView.snp.makeConstraints { maker in
+            maker.top.equalTo(5)
+            maker.height.equalTo(65)
+            maker.width.equalTo(view)
+        }
+        
+        super.updateViewConstraints()
     }
 }
