@@ -11,6 +11,11 @@ import SnapKit
 
 class HotelsSearchViewController: UIViewController {
 
+    /// Status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /// Collection View
     lazy var collectionView: UICollectionView = {
         
@@ -25,17 +30,23 @@ class HotelsSearchViewController: UIViewController {
 //        
 //        return collectionView
         
-        return UICollectionView()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        
+        return collectionView
     }()
     
     // MARK: - Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         /// Setup UI
+        setupUI()
     }
     
     private func setupUI() {
+        
+        /// Background color
+        view.backgroundColor = UIColor.white
         
         /// Title
         setTitle("Search Hotels")

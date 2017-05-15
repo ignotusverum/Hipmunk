@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        /// Global navigation bar color
-        UINavigationBar.appearance().barTintColor = UIColor(red: 63.0/255.0, green: 172.0/255.0, blue: 236.0/255.0, alpha: 1.0)
+        /// Window setup
+        AppDelegate.appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        /// Initial Transition
+        SearchRouter.initialTransition()
         
         return true
     }

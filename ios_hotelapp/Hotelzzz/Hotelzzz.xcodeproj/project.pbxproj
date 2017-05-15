@@ -21,6 +21,7 @@
 		F58184AA1EC9511300E7D8FF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A91EC9511300E7D8FF /* String.swift */; };
 		F58184AD1EC9523400E7D8FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F58184AC1EC9523400E7D8FF /* Info.plist */; };
 		F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B41EC9548C00E7D8FF /* RouteHandler.swift */; };
+		F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B81EC9561000E7D8FF /* SearchRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F58184A91EC9511300E7D8FF /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F58184AC1EC9523400E7D8FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F58184B41EC9548C00E7D8FF /* RouteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteHandler.swift; sourceTree = "<group>"; };
+		F58184B81EC9561000E7D8FF /* SearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		F222BCD41E81E72500CE0EB2 /* Hotelzzz */ = {
 			isa = PBXGroup;
 			children = (
+				F58184B61EC955F500E7D8FF /* Routing */,
 				F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */,
 				F581849F1EC94D4400E7D8FF /* Sections */,
 				F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */,
@@ -164,6 +167,22 @@
 				F58184B41EC9548C00E7D8FF /* RouteHandler.swift */,
 			);
 			path = "Route Handler";
+			sourceTree = "<group>";
+		};
+		F58184B61EC955F500E7D8FF /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				F58184B71EC9560000E7D8FF /* Search */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		F58184B71EC9560000E7D8FF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F58184B81EC9561000E7D8FF /* SearchRouter.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +316,7 @@
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
 				F58184AA1EC9511300E7D8FF /* String.swift in Sources */,
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
+				F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */,
 				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
 				F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */,
 				F222BCFA1E83235F00CE0EB2 /* HotelViewController.swift in Sources */,

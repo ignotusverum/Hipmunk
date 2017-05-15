@@ -21,3 +21,10 @@ extension UIViewController {
     }
 }
 
+extension UINavigationController {
+
+    open override var childViewControllerForStatusBarStyle: UIViewController? {
+        return visibleViewController
+    }
+}
+
