@@ -12,6 +12,9 @@ pod 'EZSwiftExtensions'
 # Core Data
 pod 'CoreStore'
 
+# Google places
+pod 'GooglePlacePicker'
+
 # Transition Animation
 pod 'Hero'
 

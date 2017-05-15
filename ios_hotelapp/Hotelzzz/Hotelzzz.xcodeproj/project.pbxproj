@@ -22,6 +22,9 @@
 		F58184AD1EC9523400E7D8FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F58184AC1EC9523400E7D8FF /* Info.plist */; };
 		F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B41EC9548C00E7D8FF /* RouteHandler.swift */; };
 		F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B81EC9561000E7D8FF /* SearchRouter.swift */; };
+		F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */; };
+		F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */; };
+		F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BF1EC9F88900E7D8FF /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		F58184AC1EC9523400E7D8FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F58184B41EC9548C00E7D8FF /* RouteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteHandler.swift; sourceTree = "<group>"; };
 		F58184B81EC9561000E7D8FF /* SearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSearchView.swift; sourceTree = "<group>"; };
+		F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewProtocol.swift; sourceTree = "<group>"; };
+		F58184BF1EC9F88900E7D8FF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		F222BCD41E81E72500CE0EB2 /* Hotelzzz */ = {
 			isa = PBXGroup;
 			children = (
+				F58184BA1EC9F4B400E7D8FF /* Custom Views */,
 				F58184B61EC955F500E7D8FF /* Routing */,
 				F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */,
 				F581849F1EC94D4400E7D8FF /* Sections */,
@@ -132,6 +139,7 @@
 				F58184B11EC9547100E7D8FF /* Route Handler */,
 				F58184A81EC9510600E7D8FF /* String */,
 				F58184A51EC950DC00E7D8FF /* Controllers */,
+				F58184BF1EC9F88900E7D8FF /* Colors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -183,6 +191,15 @@
 				F58184B81EC9561000E7D8FF /* SearchRouter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		F58184BA1EC9F4B400E7D8FF /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */,
+				F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,12 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */,
 				F222BCD81E81E72500CE0EB2 /* SearchFormViewController.swift in Sources */,
 				F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */,
 				F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */,
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
 				F58184AA1EC9511300E7D8FF /* String.swift in Sources */,
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
+				F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */,
+				F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */,
 				F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */,
 				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
 				F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */,

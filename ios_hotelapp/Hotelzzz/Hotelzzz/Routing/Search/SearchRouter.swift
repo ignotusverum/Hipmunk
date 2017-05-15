@@ -20,7 +20,7 @@ class SearchRouter {
         /// Navigation controller
         let navigationVC = UINavigationController(rootViewController: searchVC)
         navigationVC.navigationBar.isTranslucent = false
-        navigationVC.navigationBar.barTintColor = UIColor(red: 63.0/255.0, green: 172.0/255.0, blue: 236.0/255.0, alpha: 1.0)
+        navigationVC.navigationBar.barTintColor = UIColor.defaultColor
         
         /// Handle transition
         RouteHandler.transitionToController(navigationVC) {
