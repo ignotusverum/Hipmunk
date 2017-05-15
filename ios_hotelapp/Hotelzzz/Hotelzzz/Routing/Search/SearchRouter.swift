@@ -21,6 +21,15 @@ class SearchRouter {
         let navigationVC = UINavigationController(rootViewController: searchVC)
         navigationVC.navigationBar.isTranslucent = false
         navigationVC.navigationBar.barTintColor = UIColor.defaultColor
+        navigationVC.navigationBar.tintColor = UIColor.white
+        
+        let backImage = #imageLiteral(resourceName: "BackArrow")
+        
+        navigationVC.navigationBar.backIndicatorImage = backImage
+        navigationVC.navigationBar.backIndicatorTransitionMaskImage = backImage
+        
+        /*** If needed Assign Title Here ***/
+        searchVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         /// Handle transition
         RouteHandler.transitionToController(navigationVC) {

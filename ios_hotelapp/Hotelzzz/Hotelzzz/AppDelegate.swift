@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /// Places
-        GMSPlacesClient.provideAPIKey("AIzaSyCfS9kYz0mAyr7K7tiBu7YWvJUZjotXjLk")
+        GMSPlacesClient.provideAPIKey("AIzaSyCUB18uLqXM89GfGnZDDdfmYYilO6z8h_I")
         
         /// Window setup
         AppDelegate.appDelegate.window = UIWindow(frame: UIScreen.main.bounds)

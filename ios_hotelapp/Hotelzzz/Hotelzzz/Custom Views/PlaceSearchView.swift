@@ -183,6 +183,7 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
         textDidChange?(textField.text)
     }
 }

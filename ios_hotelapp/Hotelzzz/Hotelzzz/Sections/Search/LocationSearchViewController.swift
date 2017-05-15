@@ -31,18 +31,14 @@ class LocationSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /// Handle text input
-        placeSearchView.textDidChange({ text in
-            
-            /// Passing text
-            self.delegate?.placeSearchDidChange(text)
-        })
-        
         /// Setup UI
         setupUI()
         
         /// Setup constraints
         updateViewConstraints()
+        
+        /// Handle autocomplete
+        handleAutocomplete()
     }
     
     override func updateViewConstraints() {
