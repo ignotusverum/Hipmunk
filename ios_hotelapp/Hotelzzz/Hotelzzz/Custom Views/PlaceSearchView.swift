@@ -86,6 +86,9 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
         
         /// Custom initialization
         customInit()
+        
+        /// Actions setup
+        setupUI(for: state)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -147,6 +150,21 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
         }
         
         super.updateConstraints()
+    }
+    
+    /// Setup UI based on state
+    func setupUI(for state: PlaceSearchViewState) {
+        
+        /// Disabled input state
+        if state == .inputDisabled {
+            
+            /// Handle tap
+            addTapGesture { gesture in
+                self.viewTapped?()
+            }
+            
+            return
+        }
     }
     
     /// Function to handle closure in parent
