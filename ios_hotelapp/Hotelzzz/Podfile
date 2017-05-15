@@ -1,0 +1,34 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+def pods
+
+# Utilities
+swift_version = "3.0"
+pod 'PromiseKit', '~> 4.0'
+
+# Extensionsb
+pod 'EZSwiftExtensions'
+
+# Core Data
+pod 'CoreStore'
+
+# Transition Animation
+pod 'Hero'
+
+# Auto layout
+pod 'SnapKit', '~> 3.2.0'
+
+# Progress
+pod 'SVProgressHUD'
+
+# swift integration
+use_frameworks!
+
+# who cares about warnings
+inhibit_all_warnings!
+
+end
+
+target 'Hotelzzz' do
+    pods
+end

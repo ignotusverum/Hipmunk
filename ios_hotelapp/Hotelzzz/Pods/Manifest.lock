@@ -1,0 +1,37 @@
+PODS:
+  - CoreStore (3.1.1)
+  - EZSwiftExtensions (1.9)
+  - Hero (0.3.6)
+  - PromiseKit (4.2.0):
+    - PromiseKit/Foundation (= 4.2.0)
+    - PromiseKit/QuartzCore (= 4.2.0)
+    - PromiseKit/UIKit (= 4.2.0)
+  - PromiseKit/CorePromise (4.2.0)
+  - PromiseKit/Foundation (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.0):
+    - PromiseKit/CorePromise
+  - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - CoreStore
+  - EZSwiftExtensions
+  - Hero
+  - PromiseKit (~> 4.0)
+  - SnapKit (~> 3.2.0)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  CoreStore: dce7dc7eb6c379368118d7f2421c01a1b21a3c03
+  EZSwiftExtensions: ce22bf6fc5c6e7c883fec413300b006e123735d0
+  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
+  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: cebd3e586d17d81b21f935e98332db6a7beed4d4
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,6 @@
+framework module Pods_Hotelzzz {
+  umbrella header "Pods-Hotelzzz-umbrella.h"
+
+  export *
+  module * { export * }
+}
