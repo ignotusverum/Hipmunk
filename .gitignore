@@ -58,11 +58,3 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
-
-consumer/UI Components/Nodes/TMRequestInfoNode.swift
-
-consumer/UI Components/Nodes/TMStatusNode.swift
-
-consumer/UI Components/Nodes/TMContactNameNode.swift
-
-consumer/UI Components/Nodes/TMAvatarImageNode.swift
