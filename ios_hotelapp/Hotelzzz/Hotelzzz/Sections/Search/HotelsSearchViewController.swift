@@ -50,6 +50,8 @@ class HotelsSearchViewController: UIViewController {
 
             /// Presend places controller
             let placesVC = LocationSearchViewController()
+            
+            placesVC.delegate = self
             self.pushVC(placesVC)
         })
     }
@@ -97,5 +99,11 @@ class HotelsSearchViewController: UIViewController {
             /// Set place name
             self.placeSearchView.textInput.text = place.name
         })
+    }
+}
+
+extension HotelsSearchViewController: LocationSearchViewDelegate {
+    func placeSearchDidChange(_ text: NSAttributedString?) {
+        placeSearchView.textInput.attributedText = text
     }
 }

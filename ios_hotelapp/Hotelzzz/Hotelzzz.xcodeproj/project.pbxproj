@@ -26,6 +26,7 @@
 		F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */; };
 		F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BF1EC9F88900E7D8FF /* Colors.swift */; };
 		F58184C21ECA170C00E7D8FF /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */; };
+		F59DD9941ECA71BC000B33D7 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD9931ECA71BC000B33D7 /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewProtocol.swift; sourceTree = "<group>"; };
 		F58184BF1EC9F88900E7D8FF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		F59DD9931ECA71BC000B33D7 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,10 +201,20 @@
 		F58184BA1EC9F4B400E7D8FF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F59DD9921ECA71A5000B33D7 /* Cells */,
 				F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */,
 				F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F59DD9921ECA71A5000B33D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F59DD9931ECA71BC000B33D7 /* LocationTableViewCell.swift */,
+			);
+			name = Cells;
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +348,7 @@
 				F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */,
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
 				F58184AA1EC9511300E7D8FF /* String.swift in Sources */,
+				F59DD9941ECA71BC000B33D7 /* LocationTableViewCell.swift in Sources */,
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
 				F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */,
 				F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */,
