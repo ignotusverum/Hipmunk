@@ -106,8 +106,6 @@ class HotelViewController: UIViewController {
         
         /// Address
         addressInfoLabel.text = hotel.address
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     override func updateViewConstraints() {
@@ -123,7 +121,7 @@ class HotelViewController: UIViewController {
             maker.top.equalTo(imageView.snp.bottom).offset(10)
             maker.height.equalTo(100)
             maker.left.equalTo(20)
-            maker.width.equalTo(100)
+            maker.width.equalTo(view.snp.width)
         }
         
         super.updateViewConstraints()

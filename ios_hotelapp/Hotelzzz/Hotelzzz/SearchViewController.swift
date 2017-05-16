@@ -22,13 +22,43 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
     return String(data: data, encoding: .utf8)!
 }
 
-class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+/// Soring enum
+enum Soring: String {
+    case name = "name"
+    case priceAscend = "priceAscend"
+    case priceDescend = "priceDescend"
+}
 
+/// Filtering enum
+enum Filtering: Int {
+    case low = 230
+    case medium = 290
+    case high = 340
+}
+
+/// JS Calls enum
+enum JSCalls: String {
+    case apiReady = "API_READY"
+    case searchReady = "HOTEL_API_SEARCH_READY"
+    case hotelResults = "HOTEL_API_RESULTS_READY"
+    case hotelSelected = "HOTEL_API_HOTEL_SELECTED"
+}
+
+class SearchViewController: UIViewController {
+
+    /// Sorting enum
+    var sorting: Soring?
+    
+    /// Filtering
+    var priceLow: Filtering?
+    var priceHigh: Filtering?
+    
     /// Status bar color
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /// Search struct
     struct Search {
         let location: String
         let dateStart: Date
@@ -43,7 +73,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         }
     }
 
-    private var _searchToRun: Search?
+    fileprivate var _searchToRun: Search?
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -52,58 +82,105 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                 let userContentController = WKUserContentController()
 
                 // DECLARE YOUR MESSAGE HANDLERS HERE
-                userContentController.add(self, name: "API_READY")
-                userContentController.add(self, name: "HOTEL_API_HOTEL_SELECTED")
+                userContentController.add(self, name: JSCalls.apiReady.rawValue)
+                userContentController.add(self, name: JSCalls.searchReady.rawValue)
+                userContentController.add(self, name: JSCalls.hotelResults.rawValue)
 
                 return userContentController
             }()
             return config
         }())
+        
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
 
-        self.view.addSubview(webView)
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[webView]|", options: [], metrics: nil, views: ["webView": webView]))
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[webView]|", options: [], metrics: nil, views: ["webView": webView]))
         return webView
     }()
     
+    // MARK: - Controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// Title setup
         setTitle("Hotel Search")
+        
+        /// Custom init
+        setupUI()
+    }
+    
+    // MARK: - UI Setup
+    private func setupUI() {
+        
+        /// Background color
+        view.backgroundColor = UIColor.white
+        
+        /// Web view
+        view.addSubview(webView)
+        
+        /// Setup constraints
+        updateViewConstraints()
+        
+        /// Navigation setup
+        let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(onSort(_:)))
+        let filterButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(onFilter(_:)))
+        
+        navigationItem.rightBarButtonItems = [sortButton, filterButton]
+    }
+    
+    override func updateViewConstraints() {
+        
+        /// Place search setup
+        webView.snp.makeConstraints { maker in
+            maker.top.equalTo(view)
+            maker.bottom.equalTo(view)
+            maker.left.equalTo(view)
+            maker.right.equalTo(view)
+        }
+        
+        super.updateViewConstraints()
     }
 
+    /// Search
     func search(location: String, dateStart: Date, dateEnd: Date) {
         _searchToRun = Search(location: location, dateStart: dateStart, dateEnd: dateEnd)
         self.webView.load(URLRequest(url: URL(string: "http://hipmunk.github.io/hipproblems/ios_hotelapp/")!))
     }
-
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        let alertController = UIAlertController(title: NSLocalizedString("Could not load page", comment: ""), message: NSLocalizedString("Looks like the server isn't running.", comment: ""), preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Bummer", comment: ""), style: .default, handler: nil))
-        self.navigationController?.present(alertController, animated: true, completion: nil)
+    
+    // MARK: - Actions
+    func onSort(_ sender: UIBarButtonItem) {
+        print("Sort")
     }
+    
+    func onFilter(_ sender: UIBarButtonItem) {
+        print("Filter")
+    }
+}
 
+// MARK: - WKScriptMessageHandler
+extension SearchViewController: WKScriptMessageHandler {
+    /// User content handler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         switch message.name {
-        case "API_READY":
+        case JSCalls.hotelResults.rawValue:
+            
+            /// Json result
+            let json = JSON(message.body)
+            
+            /// Safety check
+            guard let array = json["results"].array else {
+                return
+            }
+            
+            setTitle("🎉 \(array.count) Hotels Found 🎉")
+            
+        case JSCalls.apiReady.rawValue:
             guard let searchToRun = _searchToRun else { fatalError("Tried to load the page without having a search to run") }
             
-            webView.evaluateJavaScript("window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))", completionHandler: { (result, error) in
-
-                guard let result = result else {
-                    return
-                }
-                
-                /// Count should be here ?
-                print(result)
-            })
-        case "HOTEL_API_HOTEL_SELECTED":
+            webView.evaluateJavaScript("window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))", completionHandler: nil)
+        case JSCalls.hotelSelected.rawValue:
             
             /// Hotel details controller
-            
             guard let resultJSON = JSON(message.body)["result"].json else {
                 return
             }
@@ -113,5 +190,14 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
             
         default: break
         }
+    }
+}
+
+extension SearchViewController: WKNavigationDelegate {
+    /// Web view handler
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        let alertController = UIAlertController(title: NSLocalizedString("Could not load page", comment: ""), message: NSLocalizedString("Looks like the server isn't running.", comment: ""), preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Bummer", comment: ""), style: .default, handler: nil))
+        self.navigationController?.present(alertController, animated: true, completion: nil)
     }
 }

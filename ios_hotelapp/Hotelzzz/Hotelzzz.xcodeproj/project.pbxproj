@@ -42,7 +42,7 @@
 		F222BCDA1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		F222BCDF1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F222BCF71E83175000CE0EB2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F222BCF71E83175000CE0EB2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../../SearchViewController.swift; sourceTree = "<group>"; };
 		F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
 		F55DAD3D1ECAB299006A7DE8 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		F55DAD3F1ECAB570006A7DE8 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -115,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */,
-				F222BCF71E83175000CE0EB2 /* SearchViewController.swift */,
 				F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */,
 				F222BCD91E81E72500CE0EB2 /* Main.storyboard */,
 				F222BCDE1E81E72500CE0EB2 /* LaunchScreen.storyboard */,
@@ -128,9 +127,17 @@
 			path = Hotelzzz;
 			sourceTree = "<group>";
 		};
+		F55DAD411ECABB01006A7DE8 /* Sorting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sorting;
+			sourceTree = "<group>";
+		};
 		F581849F1EC94D4400E7D8FF /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				F55DAD411ECABB01006A7DE8 /* Sorting */,
 				F59DD9A21ECA8D5A000B33D7 /* Calendar */,
 				F58184A01EC94D5900E7D8FF /* Search */,
 			);
@@ -140,6 +147,7 @@
 		F58184A01EC94D5900E7D8FF /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F222BCF71E83175000CE0EB2 /* SearchViewController.swift */,
 				F58184A11EC94D6F00E7D8FF /* HotelsSearchViewController.swift */,
 				F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */,
 			);
