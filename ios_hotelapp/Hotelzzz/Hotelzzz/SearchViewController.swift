@@ -103,7 +103,12 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         case "HOTEL_API_HOTEL_SELECTED":
             
             /// Hotel details controller
-            let hotelVC = HotelViewController(json: JSON(message.body))
+            
+            guard let resultJSON = JSON(message.body)["result"].json else {
+                return
+            }
+            
+            let hotelVC = HotelViewController(json: resultJSON)
             pushVC(hotelVC)
             
         default: break

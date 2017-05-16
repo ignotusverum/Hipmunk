@@ -48,6 +48,11 @@ class HotelViewController: UIViewController {
         return imageView
     }()
     
+    /// Status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /// Address Info
     lazy var addressInfoLabel: UILabel = {
        
@@ -81,9 +86,14 @@ class HotelViewController: UIViewController {
         
         /// Custom UI
         customInit()
+        
+        /// Setup constraints
+        updateViewConstraints()
     }
     
     func customInit() {
+        
+        view.backgroundColor = UIColor.white
         
         /// Image View
         view.addSubview(imageView)
@@ -93,6 +103,9 @@ class HotelViewController: UIViewController {
         
         /// Image load
         imageView.downloadImageFrom(link: hotel.imageURLString ?? "", contentMode: .scaleAspectFit)
+        
+        /// Address
+        addressInfoLabel.text = hotel.address
     }
     
     override func updateViewConstraints() {
@@ -106,9 +119,9 @@ class HotelViewController: UIViewController {
         
         addressInfoLabel.snp.makeConstraints { maker in
             maker.top.equalTo(imageView.snp.bottom).offset(10)
-            maker.height.equalTo(320)
-            maker.left.equalTo(view)
-            maker.right.equalTo(view)
+            maker.height.equalTo(100)
+            maker.left.equalTo(20)
+            maker.width.equalTo(100)
         }
         
         super.updateViewConstraints()
