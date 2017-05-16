@@ -9,7 +9,6 @@
 import UIKit
 
 class LocationTableViewCell: UITableViewCell {
-
     override var reuseIdentifier: String? {
         return "\(LocationTableViewCell.self)"
     }

@@ -27,6 +27,8 @@ enum Soring: String {
     case name = "name"
     case priceAscend = "priceAscend"
     case priceDescend = "priceDescend"
+    
+    static var allValues: [Soring] = [.name, .priceAscend, .priceDescend]
 }
 
 /// Filtering enum
@@ -34,6 +36,8 @@ enum Filtering: Int {
     case low = 230
     case medium = 290
     case high = 340
+    
+    static var allValues: [Filtering] = [.low, .medium, .high]
 }
 
 /// JS Calls enum
@@ -126,6 +130,7 @@ class SearchViewController: UIViewController {
         let filterButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(onFilter(_:)))
         
         navigationItem.rightBarButtonItems = [sortButton, filterButton]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     override func updateViewConstraints() {
@@ -149,11 +154,37 @@ class SearchViewController: UIViewController {
     
     // MARK: - Actions
     func onSort(_ sender: UIBarButtonItem) {
-        print("Sort")
+        
+        let sortingVC = SortingViewController()
+        
+        sortingVC.delegate = self
+        pushVC(sortingVC)
     }
     
     func onFilter(_ sender: UIBarButtonItem) {
-        print("Filter")
+        
+        let filterVC = FilteringViewController()
+        
+        filterVC.delegate = self
+        pushVC(filterVC)
+    }
+}
+
+// MARK: - FilteringViewControllerDelegate
+extension SearchViewController: FilteringViewControllerDelegate {
+    func selectFiltering(low: Filtering, high: Filtering?) {
+        
+        let lowString = low.rawValue.toString
+        let highString = high?.rawValue.toString ?? ""
+
+        webView.evaluateJavaScript("window.JSAPI.setHotelFilters({priceMin: \(lowString), priceMax: \(highString)})", completionHandler: nil)
+    }
+}
+
+// MARK: - Sorring delegate
+extension SearchViewController: SortingViewControllerDelegate {
+    func selectSorting(_ sorting: Soring) {
+        webView.evaluateJavaScript("window.JSAPI.setHotelSort(\(sorting.rawValue))", completionHandler: nil)
     }
 }
 
