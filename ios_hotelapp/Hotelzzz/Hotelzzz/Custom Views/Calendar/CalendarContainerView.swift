@@ -38,7 +38,17 @@ class CalendarContainerView: UIView {
             toView.date = newValue
         }
     }
-
+    
+    /// Divider view
+    lazy var dividerView: UIView = {
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.gray
+        view.alpha = 0.3
+        
+        return view
+    }()
+    
     /// Closure for detecting when view is tapped
     private var viewTapped: (()->())?
 
@@ -83,6 +93,8 @@ class CalendarContainerView: UIView {
         addSubview(fromView)
         addSubview(toView)
         
+        addSubview(dividerView)
+        
         setNeedsUpdateConstraints()
     }
     
@@ -122,6 +134,14 @@ class CalendarContainerView: UIView {
             maker.bottom.equalTo(self)
             maker.right.equalTo(self)
             maker.left.equalTo(snp.centerX)
+        }
+        
+        /// Divider view
+        dividerView.snp.makeConstraints { maker in
+            maker.bottom.equalTo(self).offset(-5)
+            maker.top.equalTo(self).offset(5)
+            maker.width.equalTo(1)
+            maker.right.equalTo(snp.centerX).offset(-1)
         }
         
         super.updateConstraints()

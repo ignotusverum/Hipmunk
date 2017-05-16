@@ -28,16 +28,6 @@ class FromCalendarView: UIView, CalendarViewProtocol {
         return label
     }()
     
-    /// Divider view
-    lazy var dividerView: UIView = {
-        
-        let view = UIView()
-        view.backgroundColor = UIColor.gray
-        view.alpha = 0.3
-        
-        return view
-    }()
-    
     /// Description Label
     lazy var descriptionLabel: UILabel = {
     
@@ -86,7 +76,6 @@ class FromCalendarView: UIView, CalendarViewProtocol {
         /// Adding subviews
         addSubview(imageView!)
         addSubview(titleLabel)
-        addSubview(dividerView)
         addSubview(descriptionLabel)
         
         setNeedsUpdateConstraints()
@@ -116,14 +105,6 @@ class FromCalendarView: UIView, CalendarViewProtocol {
             maker.bottom.equalTo(self)
             maker.right.equalTo(self)
             maker.left.equalTo(imageView!.snp.right).offset(30)
-        }
-        
-        /// Divider view
-        dividerView.snp.makeConstraints { maker in
-            maker.bottom.equalTo(self).offset(-5)
-            maker.top.equalTo(self).offset(5)
-            maker.width.equalTo(1)
-            maker.right.equalTo(self).offset(-15)
         }
         
         super.updateConstraints()
