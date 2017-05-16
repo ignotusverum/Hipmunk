@@ -27,8 +27,6 @@ class SearchRouter {
         
         navigationVC.navigationBar.backIndicatorImage = backImage
         navigationVC.navigationBar.backIndicatorTransitionMaskImage = backImage
-        
-        /*** If needed Assign Title Here ***/
         searchVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         /// Handle transition

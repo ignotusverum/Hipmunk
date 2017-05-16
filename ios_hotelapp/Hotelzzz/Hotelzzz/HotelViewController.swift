@@ -106,6 +106,8 @@ class HotelViewController: UIViewController {
         
         /// Address
         addressInfoLabel.text = hotel.address
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     override func updateViewConstraints() {
