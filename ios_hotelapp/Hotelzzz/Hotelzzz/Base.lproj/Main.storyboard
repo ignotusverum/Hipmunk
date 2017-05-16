@@ -92,55 +92,10 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <segue destination="hMw-It-0eG" kind="show" identifier="hotel_details" id="jwc-WB-JAt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsa-2b-SAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="-24"/>
-        </scene>
-        <!--Hotel Details-->
-        <scene sceneID="jV1-A5-9ug">
-            <objects>
-                <viewController id="hMw-It-0eG" customClass="HotelViewController" customModule="Hotelzzz" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TMd-ax-uEb"/>
-                        <viewControllerLayoutGuide type="bottom" id="SUw-LU-qVy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="edA-w1-8bO">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You picked:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-Gx-VQj">
-                                <rect key="frame" x="143" y="75" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-Ql-xxp">
-                                <rect key="frame" x="181" y="104" width="14" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7NU-Gx-VQj" firstAttribute="top" secondItem="TMd-ax-uEb" secondAttribute="bottom" constant="75" id="6KJ-tx-b5f"/>
-                            <constraint firstItem="7NU-Gx-VQj" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="BE6-MU-u78"/>
-                            <constraint firstItem="5xY-Ql-xxp" firstAttribute="top" secondItem="7NU-Gx-VQj" secondAttribute="bottom" constant="8" id="MMe-Vm-oJb"/>
-                            <constraint firstItem="5xY-Ql-xxp" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="kly-vj-tIS"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Hotel Details" id="BkP-pu-yFu"/>
-                    <connections>
-                        <outlet property="hotelNameLabel" destination="5xY-Ql-xxp" id="Bfq-mC-hhs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4jN-m1-8O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1538" y="740"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cUw-8V-etF">

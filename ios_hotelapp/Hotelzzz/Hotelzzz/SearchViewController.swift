@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftyJSON
 import Foundation
 
 private let dateFormatter: DateFormatter = {
@@ -23,6 +24,11 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
 
 class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
 
+    /// Status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     struct Search {
         let location: String
         let dateStart: Date
@@ -80,13 +86,25 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
         switch message.name {
         case "API_READY":
             guard let searchToRun = _searchToRun else { fatalError("Tried to load the page without having a search to run") }
-            self.webView.evaluateJavaScript(
-                "window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))",
-                completionHandler: nil)
+            
+            webView.evaluateJavaScript("window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))", completionHandler: { (result, error) in
+
+                guard let result = result else {
+                    return
+                }
+                
+                /// Count should be here ?
+                print(result)
+            })
         case "HOTEL_API_HOTEL_SELECTED":
+            
+            let hotelVC = HotelViewController(json: JSON(message.body))
+            pushVC(hotelVC)
+            
             self.performSegue(withIdentifier: "hotel_details", sender: nil)
         default: break
         }

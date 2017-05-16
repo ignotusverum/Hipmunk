@@ -12,9 +12,10 @@
 		F222BCDB1E81E72500CE0EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F222BCD91E81E72500CE0EB2 /* Main.storyboard */; };
 		F222BCDD1E81E72500CE0EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */; };
 		F222BCE01E81E72500CE0EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F222BCDE1E81E72500CE0EB2 /* LaunchScreen.storyboard */; };
-		F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCF51E830D4C00CE0EB2 /* DatePickerViewController.swift */; };
 		F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCF71E83175000CE0EB2 /* SearchViewController.swift */; };
 		F222BCFA1E83235F00CE0EB2 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */; };
+		F55DAD3E1ECAB299006A7DE8 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DAD3D1ECAB299006A7DE8 /* JSON.swift */; };
+		F55DAD401ECAB570006A7DE8 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DAD3F1ECAB570006A7DE8 /* ImageView.swift */; };
 		F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A11EC94D6F00E7D8FF /* HotelsSearchViewController.swift */; };
 		F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A61EC950F100E7D8FF /* UIViewController.swift */; };
 		F58184AA1EC9511300E7D8FF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A91EC9511300E7D8FF /* String.swift */; };
@@ -41,9 +42,10 @@
 		F222BCDA1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		F222BCDF1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F222BCF51E830D4C00CE0EB2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		F222BCF71E83175000CE0EB2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
+		F55DAD3D1ECAB299006A7DE8 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		F55DAD3F1ECAB570006A7DE8 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		F58184A11EC94D6F00E7D8FF /* HotelsSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelsSearchViewController.swift; sourceTree = "<group>"; };
 		F58184A61EC950F100E7D8FF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F58184A91EC9511300E7D8FF /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -112,15 +114,14 @@
 		F222BCD41E81E72500CE0EB2 /* Hotelzzz */ = {
 			isa = PBXGroup;
 			children = (
-				F58184BA1EC9F4B400E7D8FF /* Custom Views */,
-				F58184B61EC955F500E7D8FF /* Routing */,
 				F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */,
-				F581849F1EC94D4400E7D8FF /* Sections */,
-				F222BCF51E830D4C00CE0EB2 /* DatePickerViewController.swift */,
 				F222BCF71E83175000CE0EB2 /* SearchViewController.swift */,
 				F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */,
 				F222BCD91E81E72500CE0EB2 /* Main.storyboard */,
 				F222BCDE1E81E72500CE0EB2 /* LaunchScreen.storyboard */,
+				F581849F1EC94D4400E7D8FF /* Sections */,
+				F58184BA1EC9F4B400E7D8FF /* Custom Views */,
+				F58184B61EC955F500E7D8FF /* Routing */,
 				F58184A41EC950CF00E7D8FF /* Utilities */,
 				F58184AB1EC9520400E7D8FF /* Supporting Files */,
 			);
@@ -152,6 +153,8 @@
 				F58184A81EC9510600E7D8FF /* String */,
 				F58184A51EC950DC00E7D8FF /* Controllers */,
 				F58184BF1EC9F88900E7D8FF /* Colors.swift */,
+				F55DAD3D1ECAB299006A7DE8 /* JSON.swift */,
+				F55DAD3F1ECAB570006A7DE8 /* ImageView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55DAD401ECAB570006A7DE8 /* ImageView.swift in Sources */,
 				F5EBD4F41ECA8D8400048B8C /* CalendarViewController.swift in Sources */,
 				F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */,
 				F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */,
@@ -376,6 +380,7 @@
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
 				F59DD99F1ECA7B2D000B33D7 /* CalendarContainerView.swift in Sources */,
 				F58184AA1EC9511300E7D8FF /* String.swift in Sources */,
+				F55DAD3E1ECAB299006A7DE8 /* JSON.swift in Sources */,
 				F59DD9941ECA71BC000B33D7 /* LocationTableViewCell.swift in Sources */,
 				F59DD9991ECA758B000B33D7 /* CalendarViewProtocol.swift in Sources */,
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
@@ -383,7 +388,6 @@
 				F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */,
 				F58184C21ECA170C00E7D8FF /* LocationSearchViewController.swift in Sources */,
 				F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */,
-				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
 				F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */,
 				F222BCFA1E83235F00CE0EB2 /* HotelViewController.swift in Sources */,
 				F59DD9A11ECA7B7B000B33D7 /* ToCalendarView.swift in Sources */,

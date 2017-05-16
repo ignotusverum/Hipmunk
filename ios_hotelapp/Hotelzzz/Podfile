@@ -15,6 +15,9 @@ pod 'CoreStore'
 # Calendar
 pod 'Koyomi'
 
+# JSON
+pod 'SwiftyJSON'
+
 # Google places
 pod 'GoogleMaps'
 pod 'GooglePlaces'

@@ -25,6 +25,7 @@ PODS:
     - PromiseKit/CorePromise
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - CoreStore
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - PromiseKit (~> 4.0)
   - SnapKit (~> 3.2.0)
   - SVProgressHUD
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   CoreStore: dce7dc7eb6c379368118d7f2421c01a1b21a3c03
@@ -47,7 +49,8 @@ SPEC CHECKSUMS:
   PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a8aaf3e4d5d828a80e73c47b9aba085ab533f003
+PODFILE CHECKSUM: 7dc186d3cfab68418ed439940dcc8fc9fb782886
 
 COCOAPODS: 1.1.1
