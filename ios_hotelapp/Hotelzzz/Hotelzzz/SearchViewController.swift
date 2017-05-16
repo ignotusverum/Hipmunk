@@ -61,6 +61,12 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[webView]|", options: [], metrics: nil, views: ["webView": webView]))
         return webView
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setTitle("Hotel Search")
+    }
 
     func search(location: String, dateStart: Date, dateEnd: Date) {
         _searchToRun = Search(location: location, dateStart: dateStart, dateEnd: dateEnd)

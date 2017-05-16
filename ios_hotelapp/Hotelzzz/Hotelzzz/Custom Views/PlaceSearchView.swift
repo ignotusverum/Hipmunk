@@ -50,6 +50,9 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
     lazy var textInput: UITextField = {
        
         let textField = UITextField(frame: .zero)
+                
+        textField.textColor = UIColor.defaultColor
+        textField.font = UIFont.AvenirNextRegular(size: 14)
         
         textField.tintColor = UIColor.black
         textField.contentVerticalAlignment = .center

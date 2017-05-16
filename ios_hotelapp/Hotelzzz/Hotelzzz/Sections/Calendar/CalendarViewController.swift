@@ -24,8 +24,8 @@ class CalendarViewController: UIViewController {
             /// Causing weird UI Bug
             calendarView.select(date: toDate, to: fromDate)
             
-            calendarInputView.toDate = toDate
-            calendarInputView.fromDate = fromDate
+            calendarInputView.toDate = fromDate
+            calendarInputView.fromDate = toDate
         }
     }
     
@@ -159,8 +159,19 @@ extension CalendarViewController: KoyomiDelegate {
         let date = date ?? Date()
         let toDate = toDate ?? Date()
         
+        /// Check if not in past
+        if date < Date() || toDate < Date() {
+            return false
+        }
+        
         calendarInputView.fromDate = date
         calendarInputView.toDate = date < toDate ? toDate : date
+        
+        /// Bug fix
+        if calendarInputView.fromDate == calendarInputView.toDate {
+            koyomi.unselectAll()
+            koyomi.select(date: calendarInputView.fromDate)
+        }
         
         return true
     }

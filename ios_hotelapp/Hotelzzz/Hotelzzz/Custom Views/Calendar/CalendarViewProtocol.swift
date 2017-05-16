@@ -41,6 +41,7 @@ extension CalendarViewProtocol {
     func dateToString()-> String {
         
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.dateFormat = "dd MMM EEEE"
         
         return dateFormatter.string(from: date)

@@ -10,6 +10,13 @@ import UIKit
 import SnapKit
 import GooglePlaces
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    return formatter
+}()
+
 class HotelsSearchViewController: UIViewController {
 
     /// Places
@@ -22,10 +29,26 @@ class HotelsSearchViewController: UIViewController {
         return view
     }()
     
+    /// Button
+    lazy var search: UIButton = {
+        let button = UIButton(frame: .zero)
+        
+        button.layer.cornerRadius = 8
+        button.setTitle("Search", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setBackgroundColor(UIColor.orange, forState: .normal)
+        
+        button.addTarget(self, action: #selector(onSearch(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
     /// Location search view
     lazy var placeSearchView: PlaceSearchView = {
        
         let view = PlaceSearchView(state: .inputDisabled)
+        view.textInput.text = "New York City, NY"
+        
         return view
     }()
     
@@ -127,6 +150,20 @@ class HotelsSearchViewController: UIViewController {
             /// Set place name
             self.placeSearchView.textInput.text = place.name
         })
+    }
+    
+    // MARK: - Actions
+    func onSearch(_ sender: UIButton) {
+        
+        /// Params for search
+        let location = placeSearchView.textInput.text ?? ""
+        let dateStart = calendarInputView.fromDate
+        let dateEnd = calendarInputView.toDate
+        
+        let searchVC = SearchViewController()
+        searchVC.search(location: location, dateStart: dateStart, dateEnd: dateEnd)
+        
+        pushVC(searchVC)
     }
 }
 
