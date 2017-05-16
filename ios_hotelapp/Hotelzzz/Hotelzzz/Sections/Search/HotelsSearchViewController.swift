@@ -30,7 +30,7 @@ class HotelsSearchViewController: UIViewController {
     }()
     
     /// Button
-    lazy var search: UIButton = {
+    lazy var searchButton: UIButton = {
         let button = UIButton(frame: .zero)
         
         button.layer.cornerRadius = 8
@@ -111,6 +111,9 @@ class HotelsSearchViewController: UIViewController {
         /// Calendar view
         view.addSubview(calendarInputView)
         
+        /// Search button
+        view.addSubview(searchButton)
+        
         /// Setup constraints
         updateViewConstraints()
     }
@@ -130,6 +133,15 @@ class HotelsSearchViewController: UIViewController {
             maker.height.equalTo(65)
             maker.left.equalTo(view)
             maker.right.equalTo(view)
+        }
+        
+        /// Search button
+        searchButton.snp.makeConstraints { maker in
+            
+            maker.centerX.equalTo(view.snp.centerX)
+            maker.bottom.equalTo(-60)
+            maker.width.equalTo(180)
+            maker.height.equalTo(60)
         }
         
         super.updateViewConstraints()
