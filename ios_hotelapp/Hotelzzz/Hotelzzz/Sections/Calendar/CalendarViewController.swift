@@ -15,6 +15,20 @@ protocol CalendarViewControllerDelegate {
 
 class CalendarViewController: UIViewController {
 
+    var selectedDates: [Date] = [] {
+        didSet {
+            
+            let toDate = selectedDates.first ?? Date()
+            let fromDate = selectedDates.last ?? Date()
+            
+            /// Causing weird UI Bug
+            calendarView.select(date: toDate, to: fromDate)
+            
+            calendarInputView.toDate = toDate
+            calendarInputView.fromDate = fromDate
+        }
+    }
+    
     /// Delegate
     var delegate: CalendarViewControllerDelegate?
     
@@ -23,6 +37,20 @@ class CalendarViewController: UIViewController {
         
         let view = CalendarContainerView(state: .selectionDisabled)
         return view
+    }()
+    
+    /// Button 
+    lazy var selectButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        
+        button.layer.cornerRadius = 8
+        button.setTitle("Select", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setBackgroundColor(UIColor.orange, forState: .normal)
+        
+        button.addTarget(self, action: #selector(onSelect(_:)), for: .touchUpInside)
+        
+        return button
     }()
     
     /// Calendar View
@@ -35,13 +63,11 @@ class CalendarViewController: UIViewController {
         view.weeks = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
         view.style = .standard
         view.dayPosition = .center
-        view.selectionMode = .sequence(style: .semicircleEdge)
+        view.selectionMode = .sequence(style: .background)
         view.selectedStyleColor = UIColor(red: 203/255, green: 119/255, blue: 223/255, alpha: 1)
         view
             .setDayFont(size: 14)
             .setWeekFont(size: 10)
-        
-        view.select(dates: [self.calendarInputView.fromDate, self.calendarInputView.toDate])
         
         return view
     }()
@@ -76,9 +102,13 @@ class CalendarViewController: UIViewController {
         
         /// Calendar view
         view.addSubview(calendarView)
+        calendarView.select(date: calendarInputView.fromDate, to: calendarInputView.toDate)
         
         /// Calendar input view
         view.addSubview(calendarInputView)
+        
+        /// Select button
+        view.addSubview(selectButton)
         
         /// Setup constraints
         updateViewConstraints()
@@ -101,22 +131,36 @@ class CalendarViewController: UIViewController {
             maker.right.equalTo(view)
         }
         
+        /// Select button
+        selectButton.snp.makeConstraints { maker in
+
+            maker.centerX.equalTo(view.snp.centerX)
+            maker.bottom.equalTo(-60)
+            maker.width.equalTo(180)
+            maker.height.equalTo(60)
+        }
+        
         super.updateViewConstraints()
+    }
+    
+    // MARK: - Actions
+    func onSelect(_ sender: UIButton) {
+        delegate?.datesSelected(fromDate: calendarInputView.fromDate, toDate: calendarInputView.toDate)
+        
+        popVC()
     }
 }
 
 extension CalendarViewController: KoyomiDelegate {
-    func koyomi(_ koyomi: Koyomi, didSelect date: Date?, forItemAt indexPath: IndexPath) {}
-    
-    func koyomi(_ koyomi: Koyomi, currentDateString dateString: String) {}
     
     @objc(koyomi:shouldSelectDates:to:withPeriodLength:)
     func koyomi(_ koyomi: Koyomi, shouldSelectDates date: Date?, to toDate: Date?, withPeriodLength length: Int) -> Bool {
         
-        calendarInputView.fromDate = date ?? Date()
-        calendarInputView.toDate = toDate ?? Date()
+        let date = date ?? Date()
+        let toDate = toDate ?? Date()
         
-        delegate?.datesSelected(fromDate: calendarInputView.fromDate, toDate: calendarInputView.toDate)
+        calendarInputView.fromDate = date
+        calendarInputView.toDate = date < toDate ? toDate : date
         
         return true
     }

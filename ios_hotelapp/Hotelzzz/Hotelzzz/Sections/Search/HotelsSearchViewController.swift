@@ -66,7 +66,9 @@ class HotelsSearchViewController: UIViewController {
         calendarInputView.viewTapped { 
             /// Calendar VC
             let calendarVC = CalendarViewController()
+            calendarVC.selectedDates = [self.calendarInputView.fromDate, self.calendarInputView.toDate]
             
+            calendarVC.delegate = self
             self.pushVC(calendarVC)
         }
     }
@@ -128,8 +130,17 @@ class HotelsSearchViewController: UIViewController {
     }
 }
 
+// MARK: - Location search delegate
 extension HotelsSearchViewController: LocationSearchViewDelegate {
     func placeSearchDidChange(_ text: NSAttributedString?) {
         placeSearchView.textInput.attributedText = text
+    }
+}
+
+// MARK: - CalendarViewController delegate
+extension HotelsSearchViewController: CalendarViewControllerDelegate {
+    func datesSelected(fromDate: Date, toDate: Date) {
+        calendarInputView.fromDate = fromDate
+        calendarInputView.toDate = toDate
     }
 }
