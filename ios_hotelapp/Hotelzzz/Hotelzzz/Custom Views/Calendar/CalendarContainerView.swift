@@ -18,6 +18,26 @@ class CalendarContainerView: UIView {
             toView.state = state
         }
     }
+    
+    var fromDate: Date {
+        get {
+            return fromView.date
+        }
+        set {
+            
+            fromView.date = newValue
+        }
+    }
+    
+    var toDate: Date {
+        get {
+            return toView.date
+        }
+        set {
+            
+            toView.date = newValue
+        }
+    }
 
     /// Closure for detecting when view is tapped
     private var viewTapped: (()->())?

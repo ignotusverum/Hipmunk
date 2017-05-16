@@ -9,8 +9,15 @@
 import UIKit
 import Koyomi
 
+protocol CalendarViewControllerDelegate {
+    func datesSelected(fromDate: Date, toDate: Date)
+}
+
 class CalendarViewController: UIViewController {
 
+    /// Delegate
+    var delegate: CalendarViewControllerDelegate?
+    
     /// Calendar input view
     lazy var calendarInputView: CalendarContainerView = {
         
@@ -34,6 +41,8 @@ class CalendarViewController: UIViewController {
             .setDayFont(size: 14)
             .setWeekFont(size: 10)
         
+        view.select(dates: [self.calendarInputView.fromDate, self.calendarInputView.toDate])
+        
         return view
     }()
     
@@ -48,6 +57,12 @@ class CalendarViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
     }
     
     // MARK: - UI Setup
@@ -80,8 +95,8 @@ class CalendarViewController: UIViewController {
         
         /// Place search setup
         calendarView.snp.makeConstraints { maker in
-            maker.top.equalTo(calendarInputView.snp.bottom)
-            maker.height.equalTo(view.snp.centerX)
+            maker.top.equalTo(calendarInputView.snp.bottom).offset(15)
+            maker.height.equalTo(300)
             maker.left.equalTo(view)
             maker.right.equalTo(view)
         }
@@ -91,16 +106,17 @@ class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController: KoyomiDelegate {
-    func koyomi(_ koyomi: Koyomi, didSelect date: Date?, forItemAt indexPath: IndexPath) {
-        print("You Selected: \(date!)")
-    }
+    func koyomi(_ koyomi: Koyomi, didSelect date: Date?, forItemAt indexPath: IndexPath) {}
     
-    func koyomi(_ koyomi: Koyomi, currentDateString dateString: String) {
-        print(dateString)
-    }
+    func koyomi(_ koyomi: Koyomi, currentDateString dateString: String) {}
     
     @objc(koyomi:shouldSelectDates:to:withPeriodLength:)
     func koyomi(_ koyomi: Koyomi, shouldSelectDates date: Date?, to toDate: Date?, withPeriodLength length: Int) -> Bool {
+        
+        calendarInputView.fromDate = date ?? Date()
+        calendarInputView.toDate = toDate ?? Date()
+        
+        delegate?.datesSelected(fromDate: calendarInputView.fromDate, toDate: calendarInputView.toDate)
         
         return true
     }
