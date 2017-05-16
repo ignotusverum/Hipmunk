@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8E3224149BD5E7CBE970CA6D /* Pods_Hotelzzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5E783F442025261315DF14 /* Pods_Hotelzzz.framework */; };
 		F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */; };
-		F222BCD81E81E72500CE0EB2 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */; };
 		F222BCDB1E81E72500CE0EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F222BCD91E81E72500CE0EB2 /* Main.storyboard */; };
 		F222BCDD1E81E72500CE0EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */; };
 		F222BCE01E81E72500CE0EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F222BCDE1E81E72500CE0EB2 /* LaunchScreen.storyboard */; };
@@ -39,7 +38,6 @@
 		EF5E783F442025261315DF14 /* Pods_Hotelzzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotelzzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F222BCD21E81E72500CE0EB2 /* Hotelzzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotelzzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
 		F222BCDA1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		F222BCDF1E81E72500CE0EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				F58184B61EC955F500E7D8FF /* Routing */,
 				F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */,
 				F581849F1EC94D4400E7D8FF /* Sections */,
-				F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */,
 				F222BCF51E830D4C00CE0EB2 /* DatePickerViewController.swift */,
 				F222BCF71E83175000CE0EB2 /* SearchViewController.swift */,
 				F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */,
@@ -373,7 +370,6 @@
 			files = (
 				F5EBD4F41ECA8D8400048B8C /* CalendarViewController.swift in Sources */,
 				F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */,
-				F222BCD81E81E72500CE0EB2 /* SearchFormViewController.swift in Sources */,
 				F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */,
 				F59DD99D1ECA7859000B33D7 /* FromCalendarView.swift in Sources */,
 				F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */,
