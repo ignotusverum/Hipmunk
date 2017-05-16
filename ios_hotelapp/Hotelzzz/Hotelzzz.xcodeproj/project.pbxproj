@@ -27,6 +27,11 @@
 		F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BF1EC9F88900E7D8FF /* Colors.swift */; };
 		F58184C21ECA170C00E7D8FF /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */; };
 		F59DD9941ECA71BC000B33D7 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD9931ECA71BC000B33D7 /* LocationTableViewCell.swift */; };
+		F59DD9991ECA758B000B33D7 /* CalendarViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD9981ECA758B000B33D7 /* CalendarViewProtocol.swift */; };
+		F59DD99D1ECA7859000B33D7 /* FromCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD99C1ECA7859000B33D7 /* FromCalendarView.swift */; };
+		F59DD99F1ECA7B2D000B33D7 /* CalendarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD99E1ECA7B2D000B33D7 /* CalendarContainerView.swift */; };
+		F59DD9A11ECA7B7B000B33D7 /* ToCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DD9A01ECA7B7B000B33D7 /* ToCalendarView.swift */; };
+		F5EBD4F41ECA8D8400048B8C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBD4F31ECA8D8400048B8C /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,11 @@
 		F58184BF1EC9F88900E7D8FF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F58184C11ECA170C00E7D8FF /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		F59DD9931ECA71BC000B33D7 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		F59DD9981ECA758B000B33D7 /* CalendarViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewProtocol.swift; sourceTree = "<group>"; };
+		F59DD99C1ECA7859000B33D7 /* FromCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromCalendarView.swift; sourceTree = "<group>"; };
+		F59DD99E1ECA7B2D000B33D7 /* CalendarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarContainerView.swift; sourceTree = "<group>"; };
+		F59DD9A01ECA7B7B000B33D7 /* ToCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToCalendarView.swift; sourceTree = "<group>"; };
+		F5EBD4F31ECA8D8400048B8C /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 		F581849F1EC94D4400E7D8FF /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				F59DD9A21ECA8D5A000B33D7 /* Calendar */,
 				F58184A01EC94D5900E7D8FF /* Search */,
 			);
 			path = Sections;
@@ -201,6 +212,7 @@
 		F58184BA1EC9F4B400E7D8FF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F59DD9951ECA74AA000B33D7 /* Calendar */,
 				F59DD9921ECA71A5000B33D7 /* Cells */,
 				F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */,
 				F58184BD1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift */,
@@ -215,6 +227,25 @@
 			);
 			name = Cells;
 			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		F59DD9951ECA74AA000B33D7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F59DD99C1ECA7859000B33D7 /* FromCalendarView.swift */,
+				F59DD9A01ECA7B7B000B33D7 /* ToCalendarView.swift */,
+				F59DD9981ECA758B000B33D7 /* CalendarViewProtocol.swift */,
+				F59DD99E1ECA7B2D000B33D7 /* CalendarContainerView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		F59DD9A21ECA8D5A000B33D7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F5EBD4F31ECA8D8400048B8C /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,13 +373,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EBD4F41ECA8D8400048B8C /* CalendarViewController.swift in Sources */,
 				F58184BE1EC9F7EC00E7D8FF /* PlaceSearchViewProtocol.swift in Sources */,
 				F222BCD81E81E72500CE0EB2 /* SearchFormViewController.swift in Sources */,
 				F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */,
+				F59DD99D1ECA7859000B33D7 /* FromCalendarView.swift in Sources */,
 				F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */,
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
+				F59DD99F1ECA7B2D000B33D7 /* CalendarContainerView.swift in Sources */,
 				F58184AA1EC9511300E7D8FF /* String.swift in Sources */,
 				F59DD9941ECA71BC000B33D7 /* LocationTableViewCell.swift in Sources */,
+				F59DD9991ECA758B000B33D7 /* CalendarViewProtocol.swift in Sources */,
 				F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */,
 				F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */,
 				F58184C01EC9F88900E7D8FF /* Colors.swift in Sources */,
@@ -357,6 +392,7 @@
 				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
 				F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */,
 				F222BCFA1E83235F00CE0EB2 /* HotelViewController.swift in Sources */,
+				F59DD9A11ECA7B7B000B33D7 /* ToCalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

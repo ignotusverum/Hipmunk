@@ -116,7 +116,8 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
         setNeedsUpdateConstraints()
     }
     
-    override func updateConstraints() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         /// Icon image view
         imageView.snp.makeConstraints { maker in
@@ -129,19 +130,19 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
         /// Title label
         titleLabel.snp.makeConstraints { maker in
             maker.top.equalTo(5)
-            maker.height.equalTo(20)
+            maker.height.equalTo(10)
             maker.right.equalTo(self)
-            maker.left.equalTo(imageView).offset(30)
+            maker.left.equalTo(imageView.snp.right).offset(10)
         }
         
         /// Text input
         textInput.snp.makeConstraints { maker in
-            maker.top.equalTo(titleLabel).offset(5)
-            maker.bottom.equalTo(self)
+            maker.top.equalTo(titleLabel.snp.bottom)
+            maker.bottom.equalTo(self).offset(-15)
             maker.right.equalTo(self)
-            maker.left.equalTo(imageView).offset(30)
+            maker.left.equalTo(imageView.snp.right).offset(10)
         }
-        
+
         /// Divider view
         dividerView.snp.makeConstraints { maker in
             maker.bottom.equalTo(self).offset(-1)
@@ -149,8 +150,6 @@ class PlaceSearchView: UIView, PlaceSearchViewProtocol {
             maker.right.equalTo(self)
             maker.height.equalTo(1)
         }
-        
-        super.updateConstraints()
     }
     
     /// Setup UI based on state

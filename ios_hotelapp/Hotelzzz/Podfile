@@ -12,6 +12,9 @@ pod 'EZSwiftExtensions'
 # Core Data
 pod 'CoreStore'
 
+# Calendar
+pod 'Koyomi'
+
 # Google places
 pod 'GoogleMaps'
 pod 'GooglePlaces'

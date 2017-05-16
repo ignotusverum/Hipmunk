@@ -15,6 +15,13 @@ class HotelsSearchViewController: UIViewController {
     /// Places
     var placesClient: GMSPlacesClient
     
+    /// Calendar view
+    lazy var calendarInputView: CalendarContainerView = {
+        
+        let view = CalendarContainerView(state: .selectionDisabled)
+        return view
+    }()
+    
     /// Location search view
     lazy var placeSearchView: PlaceSearchView = {
        
@@ -54,6 +61,14 @@ class HotelsSearchViewController: UIViewController {
             placesVC.delegate = self
             self.pushVC(placesVC)
         })
+        
+        /// Handle calendar transition
+        calendarInputView.viewTapped { 
+            /// Calendar VC
+            let calendarVC = CalendarViewController()
+            
+            self.pushVC(calendarVC)
+        }
     }
     
     // MARK: - UI Setup
@@ -68,6 +83,9 @@ class HotelsSearchViewController: UIViewController {
         /// Place search view
         view.addSubview(placeSearchView)
         
+        /// Calendar view
+        view.addSubview(calendarInputView)
+        
         /// Setup constraints
         updateViewConstraints()
     }
@@ -78,7 +96,15 @@ class HotelsSearchViewController: UIViewController {
         placeSearchView.snp.makeConstraints { maker in
             maker.top.equalTo(5)
             maker.height.equalTo(65)
-            maker.width.equalTo(view)
+            maker.left.equalTo(view)
+            maker.right.equalTo(view)
+        }
+        
+        calendarInputView.snp.makeConstraints { maker in
+            maker.top.equalTo(placeSearchView.snp.bottom)
+            maker.height.equalTo(65)
+            maker.left.equalTo(view)
+            maker.right.equalTo(view)
         }
         
         super.updateViewConstraints()

@@ -11,6 +11,7 @@ PODS:
     - GooglePlaces (= 2.2.0)
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
+  - Koyomi (1.2.4)
   - PromiseKit (4.2.0):
     - PromiseKit/Foundation (= 4.2.0)
     - PromiseKit/QuartzCore (= 4.2.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - Koyomi
   - PromiseKit (~> 4.0)
   - SnapKit (~> 3.2.0)
   - SVProgressHUD
@@ -41,10 +43,11 @@ SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  Koyomi: e028b378584ec90e257681bd255a3041ca109cc6
   PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 89dc8c358a41751db5b765dd16f370796bb49ad2
+PODFILE CHECKSUM: a8aaf3e4d5d828a80e73c47b9aba085ab533f003
 
 COCOAPODS: 1.1.1
