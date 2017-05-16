@@ -4,13 +4,9 @@ def pods
 
 # Utilities
 swift_version = "3.0"
-pod 'PromiseKit', '~> 4.0'
 
 # Extensionsb
 pod 'EZSwiftExtensions'
-
-# Core Data
-pod 'CoreStore'
 
 # Calendar
 pod 'Koyomi'
