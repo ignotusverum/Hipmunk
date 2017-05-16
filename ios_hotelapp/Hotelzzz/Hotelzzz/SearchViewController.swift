@@ -102,10 +102,10 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
             })
         case "HOTEL_API_HOTEL_SELECTED":
             
+            /// Hotel details controller
             let hotelVC = HotelViewController(json: JSON(message.body))
             pushVC(hotelVC)
             
-            self.performSegue(withIdentifier: "hotel_details", sender: nil)
         default: break
         }
     }
