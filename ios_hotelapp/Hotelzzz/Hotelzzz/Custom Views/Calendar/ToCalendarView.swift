@@ -84,7 +84,7 @@ class ToCalendarView: UIView, CalendarViewProtocol {
         
         /// Descriptoin input
         descriptionLabel.snp.makeConstraints { maker in
-            maker.top.equalTo(25).offset(5)
+            maker.top.equalTo(titleLabel.snp.bottom).offset(5)
             maker.bottom.equalTo(self)
             maker.right.equalTo(self)
             maker.left.equalTo(15)

@@ -46,6 +46,8 @@ class CalendarContainerView: UIView {
         
         /// Custom init
         customInit()
+        
+        setupUI(for: state)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,10 +67,10 @@ class CalendarContainerView: UIView {
     }
     
     /// Setup UI based on state
-    func setupUI(for state: PlaceSearchViewState) {
+    func setupUI(for state: CalendarViewState) {
         
         /// Disabled input state
-        if state == .inputDisabled {
+        if state == .selectionDisabled {
             
             /// Handle tap
             addTapGesture { gesture in
