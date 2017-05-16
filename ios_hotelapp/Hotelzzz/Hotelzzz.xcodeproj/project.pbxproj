@@ -19,7 +19,6 @@
 		F58184A21EC94D6F00E7D8FF /* HotelsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A11EC94D6F00E7D8FF /* HotelsSearchViewController.swift */; };
 		F58184A71EC950F100E7D8FF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A61EC950F100E7D8FF /* UIViewController.swift */; };
 		F58184AA1EC9511300E7D8FF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184A91EC9511300E7D8FF /* String.swift */; };
-		F58184AD1EC9523400E7D8FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F58184AC1EC9523400E7D8FF /* Info.plist */; };
 		F58184B51EC9548C00E7D8FF /* RouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B41EC9548C00E7D8FF /* RouteHandler.swift */; };
 		F58184B91EC9561000E7D8FF /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184B81EC9561000E7D8FF /* SearchRouter.swift */; };
 		F58184BC1EC9F4D600E7D8FF /* PlaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58184BB1EC9F4D600E7D8FF /* PlaceSearchView.swift */; };
@@ -278,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Hipmunk, Inc.";
 				TargetAttributes = {
 					F222BCD11E81E72400CE0EB2 = {
@@ -311,7 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F58184AD1EC9523400E7D8FF /* Info.plist in Resources */,
 				F222BCE01E81E72500CE0EB2 /* LaunchScreen.storyboard in Resources */,
 				F222BCDD1E81E72500CE0EB2 /* Assets.xcassets in Resources */,
 				F222BCDB1E81E72500CE0EB2 /* Main.storyboard in Resources */,
@@ -515,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C24724931DE55D8DC369B48B /* Pods-Hotelzzz.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9CHSEMW6LK;
@@ -531,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B61E2E178B59660CC425EF4 /* Pods-Hotelzzz.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9CHSEMW6LK;
