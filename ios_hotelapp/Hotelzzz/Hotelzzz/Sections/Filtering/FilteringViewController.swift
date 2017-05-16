@@ -75,7 +75,7 @@ class FilteringViewController: UIViewController {
 
 extension FilteringViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        
         let cell = tableView.cellForRow(at: indexPath) as! FilteringTableViewCell
         delegate?.selectFiltering(low: cell.filteringLow, high: cell.filteringHigh)
         popVC()

@@ -75,7 +75,7 @@ class SortingViewController: UIViewController {
 
 extension SortingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        
         let cell = tableView.cellForRow(at: indexPath) as! SortingTableViewCell
         delegate?.selectSorting(cell.sorting)
         popVC()

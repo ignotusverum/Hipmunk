@@ -184,7 +184,7 @@ extension SearchViewController: FilteringViewControllerDelegate {
 // MARK: - Sorring delegate
 extension SearchViewController: SortingViewControllerDelegate {
     func selectSorting(_ sorting: Soring) {
-        webView.evaluateJavaScript("window.JSAPI.setHotelSort(\(sorting.rawValue))", completionHandler: nil)
+        webView.evaluateJavaScript("window.JSAPI.setHotelSort(\u{22}\(sorting.rawValue)\u{22})", completionHandler: nil)
     }
 }
 
