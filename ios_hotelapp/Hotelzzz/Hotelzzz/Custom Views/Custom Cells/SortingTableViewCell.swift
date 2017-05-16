@@ -15,4 +15,10 @@ class SortingTableViewCell: UITableViewCell {
     override var reuseIdentifier: String? {
         return "\(SortingTableViewCell.self)"
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        textLabel?.text = "\(sorting.rawValue)"
+    }
 }

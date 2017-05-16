@@ -16,6 +16,11 @@ class SortingViewController: UIViewController {
     
     var delegate: SortingViewControllerDelegate?
     
+    /// Status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /// Table view
     lazy var tableView: UITableView = {
         
@@ -41,7 +46,7 @@ class SortingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTitle("Filters")
+        setTitle("Sorting")
         
         /// Custom init
         customInit()

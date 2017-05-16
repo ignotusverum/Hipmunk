@@ -16,6 +16,11 @@ class FilteringViewController: UIViewController {
 
     var delegate: FilteringViewControllerDelegate?
     
+    /// Status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /// Table view
     lazy var tableView: UITableView = {
        
