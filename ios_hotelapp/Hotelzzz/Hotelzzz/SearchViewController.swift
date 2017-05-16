@@ -85,6 +85,7 @@ class SearchViewController: UIViewController {
                 userContentController.add(self, name: JSCalls.apiReady.rawValue)
                 userContentController.add(self, name: JSCalls.searchReady.rawValue)
                 userContentController.add(self, name: JSCalls.hotelResults.rawValue)
+                userContentController.add(self, name: JSCalls.hotelSelected.rawValue)
 
                 return userContentController
             }()
